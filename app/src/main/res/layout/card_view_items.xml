@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.circularreveal.cardview.CircularRevealCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_news"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/layout_margin_min"
-    app:cardCornerRadius="@dimen/card_view_corners">
+    app:cardCornerRadius="@dimen/card_view_corners"
+    app:cardElevation="@dimen/card_view_elevation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +22,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@color/purple_200" />
+            app:srcCompat="@color/purple_200"
+            tools:ignore="ImageContrastCheck" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_title"
@@ -38,10 +42,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/layout_margin_med"
+            android:ellipsize="end"
+            android:maxLines="@integer/max_lines"
             android:text="@string/text_view_body"
             android:textAlignment="textStart"
-            android:maxLines="@integer/max_lines"
-            android:ellipsize="end"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="?android:attr/textColorSecondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/layout_margin_min"
+            android:clickable="true"
+            android:focusable="true"
             android:tint="?android:attr/textColorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/layout_margin_med"
+            android:clickable="true"
+            android:focusable="true"
             android:tint="?android:attr/textColorSecondary"
             app:layout_constraintBottom_toBottomOf="@+id/image_view_share"
             app:layout_constraintEnd_toStartOf="@+id/image_view_share"

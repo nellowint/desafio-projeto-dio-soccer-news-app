@@ -3,6 +3,7 @@ package br.com.wellintonvieira.soccernews.model;
 public class News {
     private String title;
     private String body;
+    private String link;
     private String image;
 
     public String getTitle() {
@@ -19,6 +20,14 @@ public class News {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getImage() {

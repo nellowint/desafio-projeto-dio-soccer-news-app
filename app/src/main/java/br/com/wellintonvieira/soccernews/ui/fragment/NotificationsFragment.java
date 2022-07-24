@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import br.com.wellintonvieira.soccernews.databinding.FragmentNotificationsBinding;
-import br.com.wellintonvieira.soccernews.ui.viewmodel.NotificationsViewModel;
+import br.com.wellintonvieira.soccernews.viewmodel.NotificationsViewModel;
 
 public class NotificationsFragment extends Fragment {
 

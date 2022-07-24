@@ -9,4 +9,5 @@
     <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_size_body">16sp</dimen>
     <dimen name="card_view_corners">10dp</dimen>
+    <dimen name="card_view_elevation">8dp</dimen>
 </resources>

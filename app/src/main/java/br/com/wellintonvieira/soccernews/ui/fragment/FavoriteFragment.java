@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import br.com.wellintonvieira.soccernews.databinding.FragmentFavoritesBinding;
-import br.com.wellintonvieira.soccernews.ui.viewmodel.FavoriteViewModel;
+import br.com.wellintonvieira.soccernews.viewmodel.FavoriteViewModel;
 
 public class FavoriteFragment extends Fragment {
 

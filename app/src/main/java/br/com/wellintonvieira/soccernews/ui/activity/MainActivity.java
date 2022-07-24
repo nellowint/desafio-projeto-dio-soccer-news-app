@@ -1,4 +1,4 @@
-package br.com.wellintonvieira.soccernews;
+package br.com.wellintonvieira.soccernews.ui.activity;
 
 import android.os.Bundle;
 
@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import br.com.wellintonvieira.soccernews.R;
 import br.com.wellintonvieira.soccernews.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

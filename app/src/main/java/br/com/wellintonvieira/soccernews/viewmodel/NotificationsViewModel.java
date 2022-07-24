@@ -1,4 +1,4 @@
-package br.com.wellintonvieira.soccernews.ui.viewmodel;
+package br.com.wellintonvieira.soccernews.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
