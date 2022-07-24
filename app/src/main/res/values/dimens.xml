@@ -1,0 +1,12 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="layout_margin_min">8dp</dimen>
+    <dimen name="layout_margin_med">16dp</dimen>
+    <dimen name="layout_margin_max">32dp</dimen>
+
+    <dimen name="image_view_height">200dp</dimen>
+
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="card_view_corners">10dp</dimen>
+</resources>
