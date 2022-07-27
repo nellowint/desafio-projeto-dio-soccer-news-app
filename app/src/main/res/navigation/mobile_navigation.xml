@@ -16,10 +16,4 @@
         android:name="br.com.wellintonvieira.soccernews.ui.fragment.FavoriteFragment"
         android:label="@string/nav_favorites"
         tools:layout="@layout/fragment_favorites" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="br.com.wellintonvieira.soccernews.ui.fragment.NotificationsFragment"
-        android:label="@string/nav_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>

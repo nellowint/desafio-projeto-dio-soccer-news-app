@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@color/purple_200"
+            app:srcCompat="@color/primary_200"
             tools:ignore="ImageContrastCheck" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -67,10 +67,10 @@
             android:id="@+id/image_view_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin_min"
+            android:layout_margin="@dimen/layout_margin_med"
             android:clickable="true"
             android:focusable="true"
-            android:tint="?android:attr/textColorSecondary"
+            android:tint="@color/text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/button_open_link"
@@ -83,7 +83,7 @@
             android:layout_marginEnd="@dimen/layout_margin_med"
             android:clickable="true"
             android:focusable="true"
-            android:tint="?android:attr/textColorSecondary"
+            android:tint="@color/text"
             app:layout_constraintBottom_toBottomOf="@+id/image_view_share"
             app:layout_constraintEnd_toStartOf="@+id/image_view_share"
             app:layout_constraintTop_toTopOf="@+id/image_view_share"

@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.wellintonvieira.soccernews">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:name=".AppContext"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -15,15 +16,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoccerNews"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.activity.DetailNews"
+            android:exported="false"
+            android:label="@string/text_view_detail"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/Theme.SoccerNews.NoActionBar"/>
+
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>

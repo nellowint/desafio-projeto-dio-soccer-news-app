@@ -11,9 +11,4 @@
         android:icon="@drawable/ic_drawable_favorites"
         android:title="@string/nav_favorites" />
 
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_drawable_notifications"
-        android:title="@string/nav_notifications" />
-
 </menu>

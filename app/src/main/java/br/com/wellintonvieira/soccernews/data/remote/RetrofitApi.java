@@ -1,4 +1,4 @@
-package br.com.wellintonvieira.soccernews.retrofit;
+package br.com.wellintonvieira.soccernews.data.remote;
 
 import java.util.List;
 

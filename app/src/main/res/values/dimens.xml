@@ -5,9 +5,11 @@
     <dimen name="layout_margin_max">32dp</dimen>
 
     <dimen name="image_view_height">200dp</dimen>
+    <dimen name="image_view_app_bar_height">250dp</dimen>
 
     <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_size_body">16sp</dimen>
     <dimen name="card_view_corners">10dp</dimen>
     <dimen name="card_view_elevation">8dp</dimen>
+
 </resources>

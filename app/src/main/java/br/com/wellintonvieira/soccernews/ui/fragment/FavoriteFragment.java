@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import br.com.wellintonvieira.soccernews.adapter.NewsAdapter;
 import br.com.wellintonvieira.soccernews.databinding.FragmentFavoritesBinding;
 import br.com.wellintonvieira.soccernews.viewmodel.FavoriteViewModel;
 
@@ -17,12 +19,18 @@ public class FavoriteFragment extends Fragment {
     private FragmentFavoritesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FavoriteViewModel FavoriteViewModel = new ViewModelProvider(this).get(FavoriteViewModel.class);
-
+        FavoriteViewModel favoriteViewModel = new ViewModelProvider(this).get(FavoriteViewModel.class);
         binding = FragmentFavoritesBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-//        FavoriteViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        binding.recyclerViewFavorites.setLayoutManager(new LinearLayoutManager(getContext()));
+        setAdapter(favoriteViewModel);
+        return binding.getRoot();
+    }
+
+    private void setAdapter(FavoriteViewModel favoriteViewModel) {
+        favoriteViewModel.getFavorites().observe(getViewLifecycleOwner(), news -> {
+            NewsAdapter adapter = new NewsAdapter(news, favoriteViewModel::updateNews);
+            binding.recyclerViewFavorites.setAdapter(adapter);
+        });
     }
 
     @Override

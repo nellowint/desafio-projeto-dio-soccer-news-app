@@ -1,53 +1,60 @@
 package br.com.wellintonvieira.soccernews.viewmodel;
 
+import android.os.AsyncTask;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
+import br.com.wellintonvieira.soccernews.data.DataRepository;
 import br.com.wellintonvieira.soccernews.model.News;
-import br.com.wellintonvieira.soccernews.retrofit.RetrofitApi;
+import br.com.wellintonvieira.soccernews.model.State;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsViewModel extends ViewModel {
 
-    private final MutableLiveData<List<News>> news = new MutableLiveData<>();
-    private final RetrofitApi retrofitApi;
+    private final MutableLiveData<List<News>> mNews = new MutableLiveData<>();
+    private final MutableLiveData<State> state = new MutableLiveData<>();
 
     public NewsViewModel() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://wellintonvieira.github.io/desafio-projeto-dio-soccer-news-api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        retrofitApi = retrofit.create(RetrofitApi.class);
+        state.setValue(State.DOING);
         getNewsInApiClient();
     }
 
     public void getNewsInApiClient() {
-        retrofitApi.getNews().enqueue(new Callback<List<News>>() {
+        DataRepository.getInstance().getRetrofitApi().getNews().enqueue(new Callback<List<News>>() {
             @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+            public void onResponse(@NonNull Call<List<News>> call, @NonNull Response<List<News>> response) {
                 if (response.isSuccessful()) {
-                    news.setValue(response.body());
+                    mNews.setValue(response.body());
+                    state.setValue(State.DONE);
                 } else {
-                    //TODO ...
+                    state.setValue(State.ERROR);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<News>> call, Throwable t) {
-                //TODO ...
+            public void onFailure(@NonNull Call<List<News>> call, @NonNull Throwable error) {
+                error.printStackTrace();
+                state.setValue(State.ERROR);
             }
         });
     }
 
     public LiveData<List<News>> getNews() {
-        return this.news;
+        return this.mNews;
+    }
+
+    public LiveData<State> getState() {
+        return this.state;
+    }
+
+    public void insertNews(News favorites) {
+        AsyncTask.execute(() -> DataRepository.getInstance().getDatabaseApi().newsDAO().insert(favorites));
     }
 }
